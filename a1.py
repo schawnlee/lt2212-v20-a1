@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 np.seterr(invalid='ignore')
 
 
-def part1_load(folder1, folder2):
+def part1_load(folder1, folder2, n = 1):
     '''This function takes two dirs and return a dataframe with each article per row and in columns filename, class(dir)
     and the absolute frequency of words more frequent than n(n=1000) are shown'''
     corpus1 = loader(folder1)
@@ -28,7 +28,7 @@ def part1_load(folder1, folder2):
     # build a distribution frequency of the words
     frequent_words = []
     for word, count in fd.items():
-        if word.isalpha() and count > 1000:  # n=100
+        if word.isalpha() and count > n:  # n=100
             # if the word(token) consists only letters and occurs more than 1000 times in the corpus
             frequent_words.append(word)
 

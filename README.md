@@ -4,7 +4,7 @@ Put any documentation here including any answers to the questions in the
 assignment on Canvas.
 
 General:
-n = 1000
+n = 1000(in the test groud) n = 1 is the default value that Asad added
 m = 5
 
 
