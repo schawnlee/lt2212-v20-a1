@@ -28,3 +28,5 @@ training model...
 training done
 ----PERFORMANCE REPORT-----
 Classification rate for NB with td-idf data 0.99
+
+P.S. Two word cloud images are also added in the rep.
