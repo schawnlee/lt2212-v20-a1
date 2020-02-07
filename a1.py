@@ -61,7 +61,7 @@ def part1_load(folder1, folder2, n = 1):
     return df
 
 
-def part2_vis(df):
+def part2_vis(df, m = 5):
     # DO NOT CHANGE
     assert isinstance(df, pd.DataFrame)
 
@@ -78,9 +78,9 @@ def part2_vis(df):
     sum_rows = {}
     # plot the most frequent 5 words (m=5) for readability
     for k, y in sorted_df.items():
-        sum_row = y[:, 2:7]
+        sum_row = y[:, 2:2+m]
         sum_rows['{}'.format(k)] = (np.sum(sum_row, axis=0))
-    index = sort_by_class.columns[2:7]
+    index = sort_by_class.columns[2:2+m]
 
     df_to_plot = pd.DataFrame(sum_rows, index=index)
     ax = df_to_plot.plot.bar()
