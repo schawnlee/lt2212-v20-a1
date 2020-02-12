@@ -23,15 +23,17 @@ def part1_load(folder1, folder2, n = 1):
         all_words_pool += value
     for key, value in corpus2.items():
         all_words_pool += value
-
+     
+    frequent_words_tuple = []
     fd = FreqDist(all_words_pool)
     # build a distribution frequency of the words
-    frequent_words = []
     for word, count in fd.items():
         if word.isalpha() and count > n:  # n=100
             # if the word(token) consists only letters and occurs more than 1000 times in the corpus
-            frequent_words.append(word)
-
+            frequent_words_tuple.append((word, count))
+    frequent_words_tuple.sort(key = lambda x: x[1],reverse = True)
+    frequent_words = [word for word,count in frequent_words_tuple]
+    
     data = []
     # list of tuple to be written in dataframe
     for key, value in corpus1.items():
@@ -212,4 +214,3 @@ def bonus_part():
     print("----PERFORMANCE REPORT-----")
     print("Classification rate for NB with td-idf data", model.score(Xtest, Ytest))
     # testing
-
